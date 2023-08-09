@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+
+  <div class="row align-items-center">
+        <!-- Logo en una columna -->
+        <div class="col-md-4">
+            <img src="{% static 'img/logo-GamerSpeak.png' %}" alt="Logo de GamerSpeak" class="img-fluid" width="150" height="100">
+        </div>
+        <!-- Nombre y descripción en otra columna -->
+        <div class="col-md-8">
+            <h1>GamerSpeak</h1>
+            <p class="lead">El chat de voz para gamers</p>
+        </div>
+    </div>
+  <hr />
+
+  <h3>Descripción</h3>
+  <p>
+    GamerSpeak es una emocionante aplicación de chat de voz diseñada
+    específicamente para gamers que buscan una experiencia fluida y sencilla de
+    comunicación durante sus sesiones de juego. Nuestra aplicación proporciona
+    un chat de voz de alta calidad que se ejecuta directamente en tu navegador
+    web, lo que significa que no necesitas instalar software adicional o
+    aplicaciones en tu dispositivo. ¡Solo entra en el juego y comienza a hablar
+    con tus compañeros de equipo en tiempo real!
+  </p>
+
+  <h3>Características principales</h3>
+  <ul>
+    <li>Comunicación de voz en tiempo real durante tus partidas.</li>
+    <li>
+      Fácil acceso a través del navegador web sin instalaciones complicadas.
+    </li>
+    <li>
+      Calidad de audio cristalina para una experiencia de juego inmersiva.
+    </li>
+    <li>Creación de salas de chat privadas para tus grupos de juego.</li>
+    <li>Compatibilidad con diversos juegos y plataformas.</li>
+    <li>Interfaz de usuario intuitiva y amigable.</li>
+  </ul>
+
+  <h3>¡Únete a la comunidad de GamerSpeak hoy mismo!</h3>
+  <p>
+    Estamos comprometidos a proporcionar la mejor experiencia de chat de voz
+    para gamers de todas las edades y habilidades. Ya sea que te guste jugar en
+    PC, consolas o dispositivos móviles, GamerSpeak es tu solución para una
+    comunicación sin problemas mientras disfrutas de tus juegos favoritos.
+  </p>
+
+  <div class="text-center">
+    <a href="#" class="btn btn-primary">Regístrate Ahora</a>
+    <a href="#" class="btn btn-primary">Iniciar Sesión</a>
+  </div>
+</div>
+{% endblock content %}

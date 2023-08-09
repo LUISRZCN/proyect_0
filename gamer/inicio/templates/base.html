@@ -1,0 +1,22 @@
+{% load static %}
+       <button id="toggleButton">Cambiar a modo oscuro</button>
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>{{titulo}}</title>
+    <script src="{% static 'js/darck.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/darck.css' %}">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" href="{% static 'libs/bootstrap-5.3.1/css/bootstrap.min.css' %}"/>
+    {% block head %} {% endblock head %}
+  </head>
+  <body>
+    {% block content %} {% endblock content %}
+    <!-- Scripts -->
+    <script src="{% static 'libs/bootstrap-5.3.1/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'libs/bootstrap-5.3.1/js/bootstrap.bundle.min.js' %}"></script>
+    {% block javascript %} {% endblock javascript %}
+  </body>
+</html>
