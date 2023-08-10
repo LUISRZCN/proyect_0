@@ -2,38 +2,39 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from .forms import RegistroForm
-
+from .forms import LoginForm
 #solicitudes de inicio de sesion
 
 def registro(request):
-       if request.method == 'POST':
-           form = RegistroForm(request.POST)
-           if form.is_valid():
-               form.save()
-               return redirect('login')
-       else:
-           form = RegistroForm()
+    if request.method == 'POST':
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            # Aquí puedes guardar los datos del formulario en la base de datos
+            # y realizar otras acciones necesarias.
+            return redirect('ruta_hacia_pagina_exitosa')  # Redirige a la página de éxito
+    else:
+        form = RegistroForm()
 
-       return render(request, 'registro.html', {'form': form})
+    return render(request, 'registro.html', {'form': form})
 
-        
-def login(request):
-        if request.method == 'POST':
-            user = auth.authenticate(username=request.POST['username'],password = request.POST['password'])
+
+def inicio_sesion(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            correo = form.cleaned_data['correo']
+            contraseña = form.cleaned_data['contraseña']
+            user = authenticate(request, username=correo, password=contraseña)
             if user is not None:
-                auth.login(request,user)
-                return redirect('home')
-            else:
-                return render (request,'accounts/login.html',{'error','¡Nombre de usuario o contraseña incorrecta!'})
-        else:
-            return render(request,'accounts/login.html')
+                login(request, user)
+                return redirect('ruta_hacia_pagina_exitosa')  # Redirige a la página de éxito
+    else:
+        form = LoginForm()
 
-def logout(request):
-        if request.method == 'POST':
-            auth.logout(request)
-        return redirect('home')
+    return render(request, 'inicio_sesion.html', {'form': form})
+
 
 def inicio(request):
-  data={"titulo":"Inicio"}
+  data={"titulo":"GamerSpeak"}
   return render(request,"home.html",data)
 

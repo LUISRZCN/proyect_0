@@ -21,11 +21,12 @@
     </div>
   </div>
   <hr />
- <h2>Iniciar sesión</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
-  </form>
+<div class="container mt-5">
+    <h2>Iniciar sesión</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary mt-3">Iniciar sesión</button>
+    </form>
 </div>
 {% endblock content %}
